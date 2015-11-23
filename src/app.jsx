@@ -9,4 +9,4 @@ function App () {
   )
 }
 
-Yolk.render(<App />, document.body)
+Yolk.render(<App />, document.getElementById('main-content'))

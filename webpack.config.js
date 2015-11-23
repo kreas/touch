@@ -12,14 +12,19 @@ module.exports = {
   },
 
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    })
   ],
 
   module: {
     loaders: [
-      { test: /\.(jsx|js)?$/,
+      { test: /\.(jsx|js)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel',
+        query: {
+          presets: ['es2015']
+        }
       },
       { test: /\.scss$/,
         loader: 'style!css!sass!autoprefixer-loader'
